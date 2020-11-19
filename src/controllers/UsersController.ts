@@ -11,7 +11,9 @@ export default {
     const { id } = req.params;
     const usersRepository = getRepository(User);
   
-    const user = await usersRepository.findOne(id);
+    const user = await usersRepository.findOne(id, {
+      relations: ['books']
+    });
 
     if (!user) return res.status(404).send();
 
@@ -46,6 +48,6 @@ export default {
 
     await usersRepository.save(user);
 
-    return res.status(201).json(user);
+    return res.status(201).json(usersView.render(user));
   }
 }

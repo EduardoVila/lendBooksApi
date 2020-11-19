@@ -36,6 +36,12 @@ describe('user_view', () => {
 
       expect(userRender).toHaveProperty('email');
       expect(userRender.email).toEqual(user.email);
+
+      expect(userRender).toHaveProperty('created_at');
+      expect(userRender.created_at).toEqual(user.created_at);
+
+      expect(userRender).toHaveProperty('collection');
+      expect(userRender.collection).toEqual([]);
     });
   })
 });
