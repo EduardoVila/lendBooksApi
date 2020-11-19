@@ -117,7 +117,7 @@ describe('users', () => {
         .get(`/users/${user.id}`)
         .then(res => {
           expect(res.status).toEqual(200);
-          expect(res.body).toEqual(users_view.render(user));
+          expect(JSON.stringify(res.body)).toEqual(JSON.stringify(users_view.render(user)));
         });
       });
     });
