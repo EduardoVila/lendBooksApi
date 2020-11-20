@@ -6,7 +6,7 @@ import Book from '../../src/models/Book';
 import User from '../../src/models/User';
 import books_view from '../../src/views/books_view';
 
-describe('user_view', () => {
+describe('book_view', () => {
   let book:Book;
 
   beforeAll(async () => {

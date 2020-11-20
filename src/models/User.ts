@@ -1,5 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, OneToMany, JoinColumn } from 'typeorm'
+
 import Book from './Book';
+import LendBook from './LendBook';
 @Entity('users')
 export default class User {
   @PrimaryGeneratedColumn('increment')
@@ -18,6 +20,20 @@ export default class User {
     cascade: ['insert', 'update']
   })
  
-  @JoinColumn({ name: 'professional_id' })
+  @JoinColumn({ name: 'user_id' })
   books: Book[];
+
+  @OneToMany(() => LendBook, lendBook => lendBook.from_user, {
+    cascade: ['insert', 'update']
+  })
+
+  @JoinColumn({ name: 'from_user' })
+  lent_books: LendBook[];
+
+  @OneToMany(() => LendBook, lendBook => lendBook.to_user, {
+    cascade: ['insert', 'update']
+  })
+
+  @JoinColumn({ name: 'to_user' })
+  borrowed_books: LendBook[];
 }

@@ -12,7 +12,11 @@ export default {
     const usersRepository = getRepository(User);
   
     const user = await usersRepository.findOne(id, {
-      relations: ['books']
+      relations: [
+        'books',
+        'lent_books', 'lent_books.from_user', 'lent_books.to_user', 'lent_books.book',
+        'borrowed_books', 'borrowed_books.from_user', 'borrowed_books.to_user', 'borrowed_books.book'
+      ]
     });
 
     if (!user) return res.status(404).send();

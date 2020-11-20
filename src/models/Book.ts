@@ -1,5 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn, CreateDateColumn } from 'typeorm'
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn, CreateDateColumn, OneToMany } from 'typeorm'
 import User from './User';
+import LendBook from './LendBook';
 
 @Entity('books')
 export default class Book {
@@ -18,4 +19,11 @@ export default class Book {
   @ManyToOne(() => User, user => user.books)
   @JoinColumn({ name: 'user_id' })
   user: User;
+
+  @OneToMany(() => LendBook, lendBook => lendBook.book, {
+    cascade: ['insert', 'update']
+  })
+ 
+  @JoinColumn({ name: 'book_id' })
+  lend_books: LendBook[];
 }
