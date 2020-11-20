@@ -1,6 +1,6 @@
 # Lend Books API
 
-This project uses Node.js, TypeScript, TypeORM, Express.js, Jest.js and Yup, the database used is SQlite, after clone this repo remember to setup the application.
+This project uses Node.js, TypeScript, TypeORM, Express.js, Jest.js, and Yup, the database used is SQLite, after clone this repo remember to setup the application.
 
 This project have five features:
 
