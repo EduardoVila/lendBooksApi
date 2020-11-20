@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "NODE_ENV=development ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
-    "test": "NODE_ENV=test jest"
+    "test": "NODE_ENV=test jest",
+    "test-setup": "yarn typeorm schema:drop -c test && yarn typeorm migration:run -c test",
+    "development-setup": "yarn typeorm schema:drop -c development && yarn typeorm migration:run -c development"
   },
   "dependencies": {
     "cors": "^2.8.5",

@@ -10,3 +10,6 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
+
+src/database/database.sqlite
+src/database/test_database.sqlite
