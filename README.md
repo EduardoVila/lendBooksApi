@@ -4,12 +4,16 @@ This project uses Node.js, TypeScript, TypeORM, Express.js, Jest.js, and Yup, th
 
 This project have five features:
 
-1º Create user (POST /users)
-2º Show user details (GET /users/:id)
+1º Create user (POST /users)  
+  
+2º Show user details (GET /users/:id)  
+  
 3º Create a book (POST /book)
+  
 4º Lend a book (PUT /book/lend)
-4º Borrow a book (PUT /book/return)
-
+  
+5º Borrow a book (PUT /book/return)
+  
 ## Instaling the required libs
 ```
   yarn install
