@@ -4,9 +4,7 @@ import { getRepository } from 'typeorm';
 import createServer from '../../src/createServer';
 import connection from '../../src/database/connection';
 
-import Book from '../../src/models/Book';
 import User from '../../src/models/User';
-
 
 const app = createServer();
 
